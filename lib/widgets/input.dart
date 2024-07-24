@@ -8,12 +8,14 @@ class TextInput extends StatelessWidget {
   String hin = "";
   bool suffix;
   bool show = false;
+  String validator = '';
 
   TextInput({
     required this.control,
     required this.lab,
     required this.hin,
     required this.suffix,
+    required this.validator,
     super.key
   });
 
@@ -29,9 +31,9 @@ class TextInput extends StatelessWidget {
     return Consumer<ChangeShowIcon>(
         builder: (context, value, child) {
           return Container(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
               height: 70,
-              child: TextField(
+              child: TextFormField(
                   controller: control,
                   obscureText: suffix == true ? iconChange.show : suffix,
                   obscuringCharacter: '*',
@@ -39,7 +41,15 @@ class TextInput extends StatelessWidget {
                       fontSize: 19,
                       color: Colors.black
                   ),
+                  validator: (value){
+                    if(value == ''){
+                      return validator;
+                    }
+                  },
+                  autofocus: false,
                   decoration: InputDecoration(
+                    filled: true,
+                      fillColor: Colors.white,
                       labelText: "$lab",
                       labelStyle: const TextStyle(
                         fontSize: 22, color: Colors.purple,
@@ -62,7 +72,7 @@ class TextInput extends StatelessWidget {
                           borderSide: BorderSide(
                               width: 2,
                               color: Colors.grey.shade500
-                          )
+                          ),
                       ),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
