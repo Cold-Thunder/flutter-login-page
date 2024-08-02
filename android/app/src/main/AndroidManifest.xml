@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="login_page"
+        android:label="provider_prac"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

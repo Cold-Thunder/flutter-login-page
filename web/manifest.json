@@ -1,6 +1,6 @@
 {
-    "name": "login_page",
-    "short_name": "login_page",
+    "name": "provider_prac",
+    "short_name": "provider_prac",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
